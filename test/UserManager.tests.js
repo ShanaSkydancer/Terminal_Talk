@@ -2,6 +2,7 @@
 
 const Database = require('../src/Database.js');
 const User = require('../src/User.js');
+const UserManager = require('../src/UserManager.js');
 const assert = require('assert');
 
 describe('the Database Class', function() {
@@ -9,9 +10,11 @@ describe('the Database Class', function() {
         let userOne = new User('Shana');
         let userTwo = new User('Skye');
         let database = new Database();
-        database.saveUser(userOne);
-        database.saveUser(userTwo);
+        let userManager = new UserManager(database);
+        
+        userManager.save(userOne);
+        userManager.save(userTwo);
 
-        assert.deepEqual(database.getAllUsers(), [userOne, userTwo]);
+        assert.deepEqual(userManager.getAll(), [userOne, userTwo]);
     });
 });

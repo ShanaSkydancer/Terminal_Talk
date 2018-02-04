@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = class User {
-    constructor(name, message) {
+    constructor(name) {
         this.name = name;
-        this.messages = [message];
+        this.messages = [];
     }
 }

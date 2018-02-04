@@ -1,6 +1,12 @@
 'use strict';
 
-// module.exports = function() {
-  
-//   return 
-// }
+module.exports = class TerminalTalk {
+  constructor() {
+
+  }
+
+  handleInput() {
+      
+  }
+
+}
