@@ -3,6 +3,7 @@
 const TerminalTalk = require("../src/TerminalTalk");
 const Database = require('../src/Database.js')
 const UserManager = require('../src/UserManager.js')
+const MessageManager = require('../src/MessageManager.js')
 const assert = require('assert');
 
 describe('the TerminalTalk class', function() {
@@ -11,11 +12,11 @@ describe('the TerminalTalk class', function() {
         let database = new Database();
         let userManager = new UserManager(database);
         let messageManager = new MessageManager(database);
-        let terminalTalk = new TerminalTalk(userManager, postManager);
+        let terminalTalk = new TerminalTalk(userManager, messageManager);
         terminalTalk.handleInput('Shana -> Hello Terminal Talk People!');
-        let user = userManager.find({name: 'Shana'});
+        let user = userManager.findByName('Shana');
 
         assert.equal(user.name, 'Shana');
-        assert.equal(user.posts[0].text, 'Hello Terminal Talk People!')
+        assert.equal(user.messages[0].text, 'Hello Terminal Talk People!')
     });
 });

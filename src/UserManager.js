@@ -17,6 +17,5 @@ module.exports = class UserManager {
 
     findByName(name) {
         return find(this.database.data, ['name', name]);
-        // return find(this.database.data, {name : name});        
     }
 }
