@@ -4,7 +4,6 @@ const TerminalTalk = require("../src/TerminalTalk");
 const Database = require('../src/Database.js')
 const UserManager = require('../src/UserManager.js')
 const assert = require('assert');
-const moment = require('moment');
 
 describe('the TerminalTalk class', function() {
     it(`should create and save a User
