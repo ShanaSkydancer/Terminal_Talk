@@ -5,7 +5,10 @@ const UserManager = require('../src/UserManager.js');
 const MessageManager = require('../src/MessageManager.js');
 const User = require('../src/User.js');
 const Message = require('../src/Message.js');
+const Wall = require('../src/Wall.js');
+const assert = require('assert');
 const moment = require('moment');
+const sinon = require('sinon');
 
 describe('Wall Class', function() {
     it(`should display a User's wall correctly`, function() {
@@ -44,7 +47,7 @@ describe('Wall Class', function() {
         messageManager.save(sandroMessageTwo);
         messageManager.save(kyloMessage);
 
-        let wall = new Wall('Shana', messageManager);
+        let wall = new Wall(userOne, messageManager);
         let spy = sinon.spy(console, 'log');
         wall.display();
 

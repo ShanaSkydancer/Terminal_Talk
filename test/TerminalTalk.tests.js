@@ -7,7 +7,6 @@ const MessageManager = require('../src/MessageManager.js');
 const assert = require('assert');
 const sinon = require('sinon');
 
-
 describe('the TerminalTalk class', function() {
     
     let database = new Database();
