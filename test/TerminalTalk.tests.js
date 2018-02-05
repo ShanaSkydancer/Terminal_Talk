@@ -35,7 +35,8 @@ describe('the TerminalTalk class', function() {
         let spy = sinon.spy(console, 'log');
         terminalTalk.handleInput('Sandro');
 
-        assert(spy.calledWith('Welcome to T_T', 'Everyone - what up!!??!'))
-        spy.restore();
+        assert(spy.calledWith('Welcome to T_T (moments ago)'));
+        assert(spy.calledWith('Everyone - what up!!??! (moments ago)'));
+        console.log.restore();
     })
 });

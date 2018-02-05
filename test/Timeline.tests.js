@@ -5,6 +5,7 @@ const User = require('../src/User.js')
 const UserManager = require('../src/UserManager.js')
 const MessageManager = require('../src/MessageManager.js')
 const Message = require('../src/Message.js')
+const Timeline = require('../src/Timeline.js')
 const assert = require('assert');
 const moment = require('moment');
 const sinon = require('sinon');
@@ -30,12 +31,13 @@ describe('Timeline Class', function() {
         messageManager.save(messageOne);
         messageManager.save(messageTwo);
         
-        let timeline = new Timeline('Shana');
+        let timeline = new Timeline('Shana', messageManager);
         let spy = sinon.spy(console, 'log');
         timeline.display();
 
 
-        assert(spy.calledWith('I love cats! (5 minutes ago)', 'Hello Terminal Talk People! (8 minutes ago)'))
-        spy.restore();
+        assert(spy.calledWith('I love cats! (5 minutes ago)'));
+        assert(spy.calledWith('Hello Terminal Talk People! (8 minutes ago)'));        
+        console.log.restore();
     });
 });
