@@ -5,6 +5,7 @@ const UserManager = require('../src/UserManager.js')
 const MessageManager = require('../src/MessageManager.js')
 const User = require("../src/User.js");
 const Message = require("../src/Message.js");
+const Timeline = require('../src/Timeline.js')
 const moment = require('moment');
 
 module.exports = class TerminalTalk {
@@ -25,6 +26,15 @@ module.exports = class TerminalTalk {
       }
       this.messageManager.save(new Message(username, directObject, moment()));
     }
+    if (! action) {
+      let timeline = new Timeline(username, this.messageManager);
+      timeline.display();
+    }
+
+    if (action === "follows") {
+      this.userManager.findByName(username).follows(directObject);
+    }
   }
+
 
 }

@@ -9,18 +9,26 @@ const assert = require('assert');
 const moment = require('moment');
 
 describe('MessageManager class', function() {
-    it(`should save User's messages`, function() {
-        let database = new Database();
-        let userManager = new UserManager(database);
-        let messageManager = new MessageManager(database);
-        let user = new User('Shana');
-        let messageOne = new Message('Shana', 'Hello Terminal Talk People!', moment());
-        let messageTwo = new Message('Shana', 'Happy to be here.', moment());
+    it(`should save User's messages,
+        and it should find and return all Messages by the given author
+        in ascending order`, function() {
+            let database = new Database();
+            let userManager = new UserManager(database);
+            let messageManager = new MessageManager(database);
+            let user = new User('Shana');
 
-        userManager.save(user);
-        messageManager.save(messageOne);
-        messageManager.save(messageTwo);
+            let messageOne = new Message('Shana',
+            'Hello Terminal Talk People!',
+            moment().subtract(8, 'minutes'));
 
-        assert.deepEqual(userManager.findByName('Shana').messages, [messageOne, messageTwo]);
+            let messageTwo = new Message('Shana',
+            'I love cats!',
+            moment().subtract(5, 'minutes'));
+
+            userManager.save(user);
+            messageManager.save(messageOne);
+            messageManager.save(messageTwo);
+
+            assert.deepEqual(messageManager.findAllBy('Shana'), [messageTwo, messageOne]);
     });
 });

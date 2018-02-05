@@ -35,8 +35,20 @@ describe('the TerminalTalk class', function() {
         let spy = sinon.spy(console, 'log');
         terminalTalk.handleInput('Sandro');
 
-        assert(spy.calledWith('Welcome to T_T (moments ago)'));
-        assert(spy.calledWith('Everyone - what up!!??! (moments ago)'));
+        assert(spy.calledWith('Welcome to T_T (a few seconds ago)'));
+        assert(spy.calledWith('Everyone - what up!!??! (a few seconds ago)'));
         console.log.restore();
+    })
+
+    it(`should allow a User to follow another User`, function() {
+        terminalTalk.handleInput('Sandro -> Welcome to T_T');
+        terminalTalk.handleInput('Shana -> Hello Terminal Talk People!');
+        terminalTalk.handleInput('Kylo -> I wish Rey was on my side!')
+        terminalTalk.handleInput('Shana follows Sandro');
+        terminalTalk.handleInput('Shana follows Kylo');
+
+        let followingList = userManager.findByName('Shana').following;
+
+        assert.deepEqual(followingList, ['Sandro', 'Kylo'])
     })
 });
