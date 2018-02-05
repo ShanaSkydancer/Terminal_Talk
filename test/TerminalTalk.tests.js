@@ -1,9 +1,9 @@
 'use strict';
 
 const TerminalTalk = require("../src/TerminalTalk");
-const Database = require('../src/Database.js')
-const UserManager = require('../src/UserManager.js')
-const MessageManager = require('../src/MessageManager.js')
+const Database = require('../src/Database.js');
+const UserManager = require('../src/UserManager.js');
+const MessageManager = require('../src/MessageManager.js');
 const assert = require('assert');
 const sinon = require('sinon');
 
@@ -43,12 +43,27 @@ describe('the TerminalTalk class', function() {
     it(`should allow a User to follow another User`, function() {
         terminalTalk.handleInput('Sandro -> Welcome to T_T');
         terminalTalk.handleInput('Shana -> Hello Terminal Talk People!');
-        terminalTalk.handleInput('Kylo -> I wish Rey was on my side!')
+        terminalTalk.handleInput('Kylo -> I wish Rey was on my side...')
         terminalTalk.handleInput('Shana follows Sandro');
         terminalTalk.handleInput('Shana follows Kylo');
 
         let followingList = userManager.findByName('Shana').following;
 
         assert.deepEqual(followingList, ['Sandro', 'Kylo'])
+    })
+
+    it(`should display a User's wall correctly`, function() {
+        terminalTalk.handleInput('Sandro -> Welcome to T_T');
+        terminalTalk.handleInput('Shana -> Hello Terminal Talk People!');
+        terminalTalk.handleInput('Kylo -> I wish Rey was on my side...')
+        terminalTalk.handleInput('Shana follows Sandro');
+        terminalTalk.handleInput('Shana follows Kylo');
+        terminalTalk.handleInput('Shana wall')
+
+        // let expectedResults = ['Sandro - Welcome to T_T (a few seconds ago)',
+        //                         'Shana -> Hello Terminal Talk People! (a few seconds ago)',
+        //                         'Kylo -> I wish Rey was on my side... (a few seconds ago)']
+
+        assert.deepEqual(1, 0)
     })
 });
