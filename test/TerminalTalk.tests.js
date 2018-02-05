@@ -57,12 +57,14 @@ describe('the TerminalTalk class', function() {
         terminalTalk.handleInput('Kylo -> I wish Rey was on my side...')
         terminalTalk.handleInput('Shana follows Sandro');
         terminalTalk.handleInput('Shana follows Kylo');
+        let spy = sinon.spy(console, 'log');
+        
         terminalTalk.handleInput('Shana wall')
 
-        // let expectedResults = ['Sandro - Welcome to T_T (a few seconds ago)',
-        //                         'Shana -> Hello Terminal Talk People! (a few seconds ago)',
-        //                         'Kylo -> I wish Rey was on my side... (a few seconds ago)']
-
-        assert.deepEqual(1, 0)
+        assert(spy.calledWith('Kylo - I wish Rey was on my side... (a few seconds ago)'));
+        assert(spy.calledWith('Shana - Hello Terminal Talk People! (a few seconds ago)'));
+        assert(spy.calledWith('Sandro - Welcome to T_T (a few seconds ago)'));
+        
+        console.log.restore();
     })
 });
