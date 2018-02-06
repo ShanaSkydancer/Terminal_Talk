@@ -33,12 +33,12 @@ This project is a console-based social networking application similar to Twitter
 4. Following:
     * To view other user's posts you need to use the follows command.
     * "`<user name> follows <user name>`"
-    * eg  Shana follows Skye
+    * eg  "Shana follows Skye"
 
 5. Wall:
     * To view a user's wall, just enter their name and the wall command.
     * "`<user name> wall`"
-    * eg  Shana wall
+    * eg  "Shana wall"
 
 ## Developers Section
 ---------------------
@@ -87,7 +87,7 @@ In the future I plan to:
 2. Have the program be able to deal with exceptions or invalid commands
 3. Make use of a database like MongoDB
 4. Write even more tests
-5. Impliment Travis CI - I attempted to do this however it didn't work successfully. I need to find a way to test the console.log() output without breaking the CI build. I used SINON.JS to test output which worked successfully on my local machine but broke my build on Travis CI.
+5. Implement Travis CI - I attempted to do this however it didn't work successfully. I need to find a way to test the console.log() output without breaking the CI build. I used SINON.JS to test output which worked successfully on my local machine but broke my build on Travis CI.
 
 ### Creator
 -----------
