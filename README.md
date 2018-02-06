@@ -12,7 +12,7 @@
 
 ## About the app
 ***
-This project is a console-based social networking application similar to Twitter specifically made for the Codurance
+This project is a console-based social networking application similar to Twitter specifically made for Codurance
 
 ## User Section
 ---------------
@@ -21,23 +21,23 @@ This project is a console-based social networking application similar to Twitter
 ***
 1. Posting:
     * To post something input a name and a message in this format:
-    * <user name> -> <message>
+    * `<user name> -> <message>`
     * eg  "Shana -> I love Terminal Talk"
     * Add as many names and messages as you'd like
 
 3. Reading:
     * To read someone's timeline, enter their name.
-    * <user name>
+    * `<user name>`
     * eg  "Shana"
 
 4. Following:
     * To view other user's posts you need to use the follows command.
-    * <user name> follows <user name>
+    * `<user name> follows <user name>`
     * eg  Shana follows Skye
 
 5. Wall:
     * To view a user's wall, just enter their name and the wall command.
-    * <user name> wall
+    * `<user name> wall`
     * eg  Shana wall
 
 ## Developers Section
@@ -59,7 +59,7 @@ This project is a console-based social networking application similar to Twitter
 
 1. Fork and clone the repository from Github
 
-2. Go to the folder on your computer/laptop that you've just cloned and run `npm install`
+2. Go to the root folder on your computer/laptop that you've just cloned, and run `npm install`
 	* This is going to download all the dependencies that you'll need because they were listed in the projects package.json file.
 
 3. Now you can run `npm run terminal_talk` to start the app in the terminal.
@@ -96,7 +96,7 @@ To run mocha you simply use
 	```
 	language: node_js
 	node_js:
-	    - "v8.3.0"
+	    - "v8.4.0"
 	````
 
 5. You will need to go into your package.json file and set up a test script
@@ -113,6 +113,16 @@ To run mocha you simply use
 7. Now to run Travis you simply use
 
 `npm test`
+
+### Future Plans
+-----------
+
+In the future I plan to:
+
+1. Have my code cleaner and more refactored
+2. Have the program be able to deal with exceptions or invalid commands
+3. Make use of a database like MongoDB
+4. Write even more tests
 
 ### Creator
 -----------
