@@ -31,7 +31,7 @@ module.exports = class TerminalTalk {
     this.prompt.question('Enter your command:', (input) => {
       if (input === 'exit') {
         console.log('Thanks for using Terminal Talk! Come back soon! :) ');
-        return prompt.close();
+        return this.prompt.close();
       }
 
       this.handleInput(input);
