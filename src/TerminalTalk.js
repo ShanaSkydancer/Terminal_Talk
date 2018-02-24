@@ -1,8 +1,8 @@
 'use strict';
 
-const Database = require('../src/Database.js')
-const UserManager = require('../src/UserManager.js')
-const MessageManager = require('../src/MessageManager.js')
+const Database = require('../src/Database.js');
+const UserManager = require('../src/UserManager.js');
+const MessageManager = require('../src/MessageManager.js');
 const InputParser = require('../src/InputParser.js');
 const Command = require('../src/Command.js');
 const readline = require('readline');

@@ -1,19 +1,19 @@
 'use strict';
 
-const Database = require('../src/Database.js')
-const User = require('../src/User.js')
-const UserManager = require('../src/UserManager.js')
-const MessageManager = require('../src/MessageManager.js')
-const Message = require('../src/Message.js')
-const Timeline = require('../src/Timeline.js')
+const Database = require('../src/Database.js');
+const User = require('../src/User.js');
+const UserManager = require('../src/UserManager.js');
+const MessageManager = require('../src/MessageManager.js');
+const Message = require('../src/Message.js');
+const Timeline = require('../src/Timeline.js');
 const assert = require('assert');
 const moment = require('moment');
 const sinon = require('sinon');
 
-describe('Timeline Class', function() {
+describe('Timeline Class', () => {
     it(`should get all Messages for a User,
     and order them in ascending order by created time,
-    and display them to the console`, function() {
+    and display them to the console`, () => {
         let database = new Database();
         let userManager = new UserManager(database);
         let messageManager = new MessageManager(database);

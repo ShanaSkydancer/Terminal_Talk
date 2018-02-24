@@ -8,10 +8,10 @@ const Message = require('../src/Message.js');
 const assert = require('assert');
 const moment = require('moment');
 
-describe('MessageManager class', function() {
+describe('MessageManager class', () => {
     it(`should save User's messages,
         and it should find and return all Messages by the given author
-        in ascending order`, function() {
+        in ascending order`, () => {
             let database = new Database();
             let userManager = new UserManager(database);
             let messageManager = new MessageManager(database);

@@ -5,8 +5,8 @@ const User = require('../src/User.js');
 const UserManager = require('../src/UserManager.js');
 const assert = require('assert');
 
-describe('the Database Class', function() {
-    it(`should save two Users`, function() {
+describe('the Database Class', () => {
+    it(`should save two Users`, () => {
         let userOne = new User('Shana');
         let userTwo = new User('Skye');
         let database = new Database();
@@ -18,7 +18,7 @@ describe('the Database Class', function() {
         assert.deepEqual(userManager.getAll(), [userOne, userTwo]);
     });
 
-    it(`should find a User`, function() {
+    it(`should find a User`, () => {
         let userOne = new User('Shana');
         let userTwo = new User('Skye');
         let database = new Database();

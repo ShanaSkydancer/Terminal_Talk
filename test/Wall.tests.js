@@ -10,8 +10,8 @@ const assert = require('assert');
 const moment = require('moment');
 const sinon = require('sinon');
 
-describe('Wall Class', function() {
-    it(`should display a User's wall correctly`, function() {
+describe('Wall Class', () => {
+    it(`should display a User's wall correctly`, () => {
         let database = new Database();
         let userManager = new UserManager(database);
         let messageManager = new MessageManager(database);

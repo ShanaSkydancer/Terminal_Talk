@@ -2,7 +2,7 @@
 
 const User = require("../src/User.js");
 const Message = require("../src/Message.js");
-const Timeline = require('../src/Timeline.js')
+const Timeline = require('../src/Timeline.js');
 const Wall = require('../src/Wall.js');
 const moment = require('moment');
 

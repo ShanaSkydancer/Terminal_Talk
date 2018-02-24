@@ -1,25 +1,25 @@
 'use strict';
 
-const TerminalTalk = require("../src/TerminalTalk");
+const TerminalTalk = require("../src/TerminalTalk.js");
 const Database = require('../src/Database.js');
 const UserManager = require('../src/UserManager.js');
 const MessageManager = require('../src/MessageManager.js');
 const assert = require('assert');
 const sinon = require('sinon');
 
-describe('the TerminalTalk class', function() {
+describe('the TerminalTalk class', () => {
     
     let database = new Database();
     let userManager = new UserManager(database);
     let messageManager = new MessageManager(database);
     let terminalTalk = new TerminalTalk(userManager, messageManager);
 
-    afterEach(function(){
+    afterEach(() => {
         database.clear();
     });
 
     it(`should create and save a User
-    along with the associated Message given the appropriate input`, function() {
+    along with the associated Message given the appropriate input`, () => {
         terminalTalk.handleInput('Shana -> Hello Terminal Talk People!');
         let user = userManager.findByName('Shana');
 
@@ -27,7 +27,7 @@ describe('the TerminalTalk class', function() {
         assert.equal(user.messages[0].text, 'Hello Terminal Talk People!')
     });
    
-    it(`should display the correct timeline`, function() {
+    it(`should display the correct timeline`, () => {
         terminalTalk.handleInput('Shana -> Hello Terminal Talk People!');
         terminalTalk.handleInput('Sandro -> Welcome to T_T');
         terminalTalk.handleInput('Sandro -> Everyone - what up!!??!');

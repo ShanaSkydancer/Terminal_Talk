@@ -1,6 +1,6 @@
 'use strict';
 
-const TerminalTalk = require("../src/TerminalTalk");
+const TerminalTalk = require("../src/TerminalTalk.js");
 const Database = require('../src/Database.js');
 const UserManager = require('../src/UserManager.js');
 const MessageManager = require('../src/MessageManager.js');

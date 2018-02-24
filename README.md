@@ -12,7 +12,7 @@
 
 ## About the app
 ***
-This project is a console-based social networking application similar to Twitter specifically made for Codurance
+This project is a console-based social networking application similar to Twitter
 
 ## User Section
 ---------------
@@ -50,7 +50,7 @@ This project is a console-based social networking application similar to Twitter
 ***
 
 1. [NPM](https://www.npmjs.com/)
-2. [Node](https://nodejs.org/en/)
+2. [Node](https://nodejs.org/en/) "v8.4.0"
 3. [Mocha](https://mochajs.org/)
 
 ## Installation
@@ -87,7 +87,7 @@ In the future I plan to:
 2. Have the program be able to deal with exceptions or invalid commands
 3. Make use of a database like MongoDB
 4. Write even more tests
-5. Implement Travis CI - I attempted to do this however it didn't work successfully. I need to find a way to test the console.log() output without breaking the CI build. I used SINON.JS to test output which worked successfully on my local machine but broke my build on Travis CI.
+5. Implement Travis CI - I attempted to do this however it didn't work successfully. I think the problem is happening with it and Mocha.
 
 ### Creator
 -----------
